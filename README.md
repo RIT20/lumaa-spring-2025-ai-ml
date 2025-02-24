@@ -1,7 +1,4 @@
 # AI/Machine Learning Intern Challenge: Simple Content-Based Recommendation
-
-**Deadline**: Sunday, Feb 23th 11:59 pm PST
-
 ---
 Dataset: 
    I have used kaggle data, it is comprise of 16 different genre of data(in .csvs), I combined them and randomly selected 800 rows for our use case in sample_movies.csv
@@ -43,6 +40,6 @@ Results:
 
 Salary expectation per month (Mandatory):
    $20 - $30 per hour/ $3200 - $4800 per month
-
+   
 Video Link :
    https://drive.google.com/file/d/1ud_nyaGfisFds7tm9PqcSSp7KQdjLIHT/view?usp=drive_link
