@@ -10,6 +10,8 @@ import nltk
 # nltk.download('stopwords')
 from nltk.corpus import stopwords
 stoplist = set(stopwords.words('english'))
+from nltk.stem import *
+stemmer = SnowballStemmer("english")
 
 def get_cosine_similarity(A, B):
     A = np.array(A)
@@ -18,11 +20,12 @@ def get_cosine_similarity(A, B):
     return cosine_sim
 
 def tf_idf_preprocess(text):
-
     cleaned_text = re.sub(r'[^a-zA-Z\s]', '', text)  # Removes numbers and special characters
     cleaned_text = re.sub(r'\s+', ' ', cleaned_text)  # Replaces multiple spaces with a single space
     cleaned_text = re.sub(r'\b\w{1}\b', '', cleaned_text)  # Remove single letter words
     cleaned_text = ' '.join([word for word in cleaned_text.split() if word not in stoplist])
+    # cleaned_text = ' '.join([stemmer.stem(str(word)) for word in cleaned_text.split()]) # stemming didn't worked for these cases
+
     cleaned_text = re.sub('See full summary', '', cleaned_text)
     cleaned_text = cleaned_text.lower()
     return cleaned_text.strip()  # Remove leading and trailing spaces
